@@ -1,0 +1,17 @@
+<html>
+<title>JSONP</title>
+<head></head>
+<body>
+<?php
+echo 'Hello world'; 
+?>
+<script type="text/javascript">
+var script = document.createElement('SCRIPT');
+script.src = "https://api.vk.com/method/users.get?user_ids=278891407&fields=bdate&v=5.68&callback=callbackFunc";
+document.getElementsByTagName("head")[0].appendChild(script);
+function callbackFunc(result) {
+alert(result.response[0].first_name)
+}
+</script>
+</body>
+</html>
